@@ -77,9 +77,9 @@ class JiankangDownloaderMiddleware(object):
         request.headers['Connection']='keep-alive'
         request.headers['Upgrade-Insecure-Requests']='1'
         request.headers['Cache-Control']='max-age=0'
-
+        request.headers['Referer']='https://www.pingan.com/official/insurance?firstclass=a6cd7dbd9051778b&pagenum=1'
         
-
+        # print('mid')
         return None
 
     def process_response(self, request, response, spider):

@@ -21,10 +21,10 @@ LOG_FILE ="jiankang.log"
 USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 4
+CONCURRENT_REQUESTS = 1
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -44,13 +44,12 @@ DOWNLOAD_DELAY = 0.3
 DEFAULT_REQUEST_HEADERS = {
     'Accept': 'text/html,application/zxhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'en',
-    'Upgrade-Insecure-Requests':'1',
 }
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'Jiankang.middlewares.JiankangSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'Jiankang.middlewares.JiankangSpiderMiddleware': 543,
+}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html

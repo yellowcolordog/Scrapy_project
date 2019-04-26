@@ -15,3 +15,4 @@ class JiankangItem(scrapy.Item):
     advantage = scrapy.Field()
     price = scrapy.Field()
     link = scrapy.Field()
+    
