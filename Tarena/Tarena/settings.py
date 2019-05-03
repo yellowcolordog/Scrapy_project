@@ -17,8 +17,9 @@ NEWSPIDER_MODULE = 'Tarena.spiders'
 # 增加的设置
 LOG_LEVEL="WARNING"
 LOG_FILE="tarena.log"
-
-
+FILES_URLS_FIELD = "link"  # 对应item里面设定的字段，取到文件的url
+FILES_RESULT_FIELD = "path"  # 基本路径后面跟的路径, 应该是
+FILES_STORE='/home/tarena/tarena/scrapy/TarenaNote/' # 基本路径
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'Tarena (+http://www.yourdomain.com)'
 
@@ -72,6 +73,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'Tarena.pipelines.TarenaPipeline': 300,
+   'Tarena.pipelines.TarenaFilePipeline':299,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -94,3 +96,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+# 自己创建的设置
+BASEFILES="/home/tarena/tarena/scrapy/TarenaNote/"
